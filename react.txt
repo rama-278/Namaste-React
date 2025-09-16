@@ -1,0 +1,131 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+
+
+
+const heading = React.createElement("div", { id: "parent" },
+   [ React.createElement("div", { id: "child1" ,key:"child1"},
+       [React.createElement("h1", {id:"h1",key:"h1-1"}, "Nested React Elements1"),
+           React.createElement("h2", {id:"h2",key:"h2-1"}, "This is the element 1")
+            
+       ]),
+       React.createElement("div", { id: "child2",key:"child2" },
+           [React.createElement("h1", {id:"h1",key:"h1-1"}, "Nested React Elements2"),
+               React.createElement("h2", {id:"h2",key:"h2-1"}, "This is the element2 ")])
+   ]);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading);
+
+
+
+
+Intro to JSX and React Element
+const jsxHeading = <h1 id="heading">This is React by JSX</h1>
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(jsxHeading);
+
+
+React Components-- Functional Component
+const HeadingComponent = () => (
+    <h1>This is React Functional Component</h1>
+
+);
+
+
+
+const HeadingComponent = () => {
+    return <h1>This is React Functional Component1</h1>
+};
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
+
+
+
+ 
+
+composition of components
+const Title = () => (
+     <h1>Namaste React using JSX</h1>
+);
+
+const FunHeading = () => (
+    <div id="container">
+        These are the ways to render components inside another component
+    {Title()}
+    <Title />
+    <Title></Title>  
+     <h1>Namaste React Functional Component</h1>
+    </div>
+);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<FunHeading />);
+
+
+Inserting react elements into a components
+const ele= <span>Namaste React Element</span>
+
+const title = (
+ 
+    <h1 className="head" tabIndex={5}>
+        {ele}
+        This is React Element
+    </h1>
+);
+
+const Heading = () => (
+    <div id="container">
+        {title}
+        <h1>This is React Component</h1>
+    </div>
+);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Heading />);
+
+
+
+
+CSS
+ #root{
+    font-size: medium;
+}
+#child1{
+    color:blue;
+}
+#child2{
+    color:blueviolet;
+} 
+
+
+
+index.html file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="root"><!-- <h1>Hello world!</h1> --></div>
+    
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+    <script type="module" src="./App.js"></script>
+    <!-- <script>
+        const heading=React.createElement("h1",{},"Hello world from react ");
+        const root=ReactDOM.createRoot(document.getElementById("root"));
+        root.render(heading);
+    </script>
+    -->
+         <!-- <script>
+            const heading=document.createElement("h1");
+            heading.innerHTML="Hello world from javascript";
+            const root=document.getElementById("root");
+            root.appendChild(heading);
+         </script>
+     -->
+</body>
+</html>

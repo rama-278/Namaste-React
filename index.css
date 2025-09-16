@@ -1,9 +1,63 @@
-#root{
-    font-size: medium;
+
+
+
+/* 
+CSS for the App */
+.header{
+    display: flex;
+    justify-content:space-between;
+    border:1px solid black;
 }
-#child1{
-    color:blue;
+
+.logo{
+    width: 100px;
+   margin:10px;
 }
-#child2{
-    color:blueviolet;
+.nav-items > ul{
+    font-size:18px;
+    display:flex;
+    list-style-type: none;
+}
+.nav-items > ul > li{
+
+    padding:10px;
+    margin:10px;
+}
+.search {
+    padding: 20px;
+    
+}
+button{
+    width: 50vh;
+}
+button:hover{
+    width:100%;
+    box-shadow: 5px 5px 10px grey;
+    cursor: pointer;
+}
+.res-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.res-card{
+    width:200px;
+    padding: 5px;
+    margin:5px;
+    box-shadow: 5px 5px 10px grey;
+    white-space: normal;/* allows text to wrap */
+    word-wrap: break-word;/* breaks long words if needed */
+    overflow-wrap: break-word;
+    
+}
+.res-card:hover{
+    cursor:pointer;
+    border: 1px solid black;
+}
+
+.res-logo{
+    width: 100%;
+    
+    
 }
