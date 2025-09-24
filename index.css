@@ -3,67 +3,6 @@
 
 /* 
 CSS for the App */
-/* .header{
-    display: flex;
-    justify-content:space-between;
-    border:1px solid black;
-}
-
-.fa-cart-shopping {
-    font-size: 25px;
-    color: blue;
-    cursor: pointer;
-}
-.logo{
-    width: 100px;
-   margin:10px;
-}
-.nav-items > ul{
-    font-size:18px;
-    display:flex;
-    list-style-type: none;
-}
-.nav-items > ul > li{
-
-    padding:10px;
-    margin:10px;
-}
-.search {
-    padding: 20px;
-    
-}
- button{
-    margin:10px;
-}
-button:hover{
-    width:100%;
-    box-shadow: 5px 5px 10px grey;
-    cursor: pointer;
-}
-.res-container{
-    display:flex;
-    flex-wrap:wrap;
-}
-
-.res-card{
-    width:200px;
-    padding: 5px;
-    margin:5px;
-    box-shadow: 5px 5px 10px grey;
-    white-space: normal;
-    word-wrap: break-word;
-    
-}
-.res-card:hover{
-    cursor:pointer;
-    border: 1px solid black;
-}
-
-.res-logo{
-    width: 100%;
-    
-    
-} */
 .header {
     display: flex;
     justify-content: space-between;
@@ -99,15 +38,22 @@ button:hover{
 .res-card {
     border: 1px solid black;
     width: 220px;
+    height: 400px;
+    /* ✅ fixed height for uniformity */
     padding: 10px;
     box-shadow: 4px 4px 8px grey;
     background-color: #f0f0f0;
     font-size: 12px;
-    /* smaller font size than nav items */
     text-align: center;
     transition: all 0.3s ease-in-out;
     white-space: normal;
     word-wrap: break-word;
+
+    display: flex;
+    /* ✅ makes child elements align properly */
+    flex-direction: column;
+    justify-content: space-between;
+    /* spread content evenly */
 }
 
 .res-card:hover {
@@ -116,29 +62,52 @@ button:hover{
     border: 1px solid black;
     cursor: pointer;
 }
-
 .res-card img {
     width: 100%;
     height: 150px;
-    /* proportional reduction */
     object-fit: cover;
+    /* ✅ ensures all images crop properly */
+    border-radius: 4px;
 }
-
+.res-card-link {
+    text-decoration: none;
+    /* removes underline */
+    color: inherit;
+    /* keeps the text color of the card */
+    display: block;
+    /* ensures the whole card is clickable */
+}
 .filter {
     display:flex;
     margin: 20px;
 }
 
+
 .filter-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
+    background-color: #ff6f3c;
+    /* vibrant orange for food theme */
     color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.filter-btn:hover {
+    background-color: #e65c2d;
+    /* slightly darker orange */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.filter-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
 
 
 .shimmer-container{
@@ -149,10 +118,6 @@ button:hover{
    
 }
 .shimmer-card{
-    /* width: 220px;
-    height:400px;
-    background-color:#f0f0f0;
-    margin: 20px; */
     width: 220px;
     height:310px;
         padding: 10px;
@@ -161,16 +126,82 @@ button:hover{
         text-align: center;
         transition: all 0.3s ease-in-out;
 }
-.login{
+/* .login{
     margin:0px   20px;
     padding:10px;
+    background-color: #007bff;
+    border:none;
+} */
+
+.login {
+    background-color: #007bff;
+    /* bright blue */
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    margin-left: 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login:hover {
+    background-color: #0056b3;
+    /* darker blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.login:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 .search{
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
 
-    padding: 10px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
+.search:focus {
+    border-color: #ff6f3c;
+    box-shadow: 0px 0px 5px rgba(255, 111, 60, 0.5);
+}
+.search-btn {
+    background-color: #ff6f3c;
+    /* nice orange to match food theme */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #e65c2d;
+    /* darker on hover */
+    transform: translateY(-2px);
+    /* subtle lift effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+    /* reset when clicked */
+    box-shadow: none;
+}
+.nav-items ul li a {
+    text-decoration: none;
+    color: black;
+    /* or whatever color you want */
+    font-weight: normal;
+    /* optional */
 }
